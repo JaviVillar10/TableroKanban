@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tablero Kanban</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <main class="contenedor-tablero">
+        
+        <div class="columna" id="col-pendiente">
+            <div class="cabecera-columna">
+                <h2>Por hacer</h2>
+            </div>
+            
+            <div class="contenedor-tareas" id="lista-pendiente">
+                <div class="tarjeta" draggable="true" id="tarea-1">
+                    <p class="contenido-tarea">Terminar la práctica de diseño</p>
+                    <button class="btn-borrar" title="Eliminar">X</button>
+                </div>
+            </div>
+
+            <div class="zona-anadir">
+                <button class="btn-mas">+ Añadir tarjeta</button>
+            </div>
+        </div>
+
+        <div class="columna" id="col-progreso">
+            <div class="cabecera-columna">
+                <h2>En progreso</h2>
+            </div>
+            <div class="contenedor-tareas" id="lista-progreso">
+                </div>
+            <div class="zona-anadir">
+                <button class="btn-mas">+ Añadir tarjeta</button>
+            </div>
+        </div>
+
+        <div class="columna" id="col-terminado">
+            <div class="cabecera-columna">
+                <h2>Hecho</h2>
+            </div>
+            <div class="contenedor-tareas" id="lista-terminado">
+                </div>
+            <div class="zona-anadir">
+                <button class="btn-mas">+ Añadir tarjeta</button>
+            </div>
+        </div>
+
+    </main>
+
+</body>
+</html>

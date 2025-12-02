@@ -1,0 +1,163 @@
+:root {
+    --azul-fondo-web: #e3f2fd;
+    --azul-columna: #bbdefb;
+    --blanco-tarjeta: #ffffff;
+    --azul-texto: #0d47a1;
+    --azul-boton: #1976d2;
+    --azul-boton-hover: #1565c0;
+    --rojo-borrar: #d32f2f;
+    
+    --radio: 8px;
+    --sombra: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+body {
+    background-color: var(--azul-fondo-web);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.contenedor-tablero {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    align-items: flex-start;
+}
+
+.columna {
+    background-color: var(--azul-columna);
+    border-radius: var(--radio);
+    width: 32%;
+    min-width: 250px;
+    padding: 10px;
+    box-shadow: var(--sombra);
+    display: flex;
+    flex-direction: column;
+}
+
+.cabecera-columna h2 {
+    text-align: center;
+    color: var(--azul-texto);
+    margin-top: 5px;
+    border-bottom: 2px solid rgba(255,255,255,0.5);
+    padding-bottom: 10px;
+}
+
+.contenedor-tareas {
+    min-height: 50px;
+    margin-bottom: 15px;
+}
+
+.tarjeta {
+    background-color: var(--blanco-tarjeta);
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: var(--radio);
+    box-shadow: var(--sombra);
+    cursor: grab;
+    position: relative;
+    transition: background-color 0.3s;
+}
+
+.tarjeta.arrastrando {
+    opacity: 0.5;
+    border: 2px dashed var(--azul-texto);
+}
+
+.tarjeta:hover {
+    background-color: #f1f8ff;
+}
+
+.contenido-tarea {
+    margin: 0;
+    word-wrap: break-word;
+    transition: padding-right 0.3s ease; 
+}
+
+.tarjeta:hover .contenido-tarea {
+    padding-right: 25px; 
+}
+
+.btn-borrar {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: transparent;
+    border: none;
+    color: var(--rojo-borrar);
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    opacity: 0; 
+    transition: opacity 0.3s ease, background-color 0.3s;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+}
+
+.tarjeta:hover .btn-borrar {
+    opacity: 1;
+}
+
+.btn-borrar:hover {
+    background-color: #ffcdd2;
+}
+
+.btn-mas {
+    width: 100%;
+    padding: 10px;
+    background-color: transparent;
+    border: 2px dashed #90caf9;
+    color: var(--azul-texto);
+    cursor: pointer;
+    border-radius: var(--radio);
+    text-align: left;
+    transition: background-color 0.3s;
+}
+
+.btn-mas:hover {
+    background-color: rgba(255,255,255,0.5);
+}
+
+.formulario-nuevo {
+    background: white;
+    padding: 10px;
+    border-radius: var(--radio);
+    box-shadow: var(--sombra);
+    margin-bottom: 10px;
+}
+
+.formulario-nuevo textarea {
+    width: 100%;
+    border: 1px solid #ccc;
+    padding: 5px;
+    box-sizing: border-box;
+    resize: none;
+    margin-bottom: 5px;
+}
+
+.grupo-botones {
+    display: flex;
+    gap: 5px;
+}
+
+.btn-guardar {
+    background-color: var(--azul-boton);
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-cancelar {
+    background: transparent;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    color: #555;
+}
